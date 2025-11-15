@@ -1,81 +1,104 @@
 'use client';
-import { GraduationCap, Users, Calendar } from 'lucide-react';
-import Link from 'next/link';
 
-export default function Bildungswerk() {
+import Link from 'next/link';
+import { ArrowLeft, GraduationCap, Users, Calendar, Award } from 'lucide-react';
+
+export default function BildungswerkPage() {
   const kurse = [
-    { name: 'Hauptschulabschluss', teilnehmer: 6, start: '01.09.2024', ende: '30.06.2025', status: 'Laufend' },
-    { name: 'Realschulabschluss', teilnehmer: 4, start: '01.09.2024', ende: '30.06.2025', status: 'Laufend' },
-    { name: 'Ausbildung Einzelhandel', teilnehmer: 3, start: '01.08.2024', ende: '31.07.2027', status: 'Laufend' },
-    { name: 'EDV Grundkurs', teilnehmer: 8, start: '15.11.2024', ende: '15.01.2025', status: 'Geplant' }
+    { id: 1, name: 'Berufsvorbereitung Basis', teilnehmer: 8, startDatum: '01.09.2025', status: 'laufend', fortschritt: 65 },
+    { id: 2, name: 'Hauptschulabschluss', teilnehmer: 12, startDatum: '15.08.2025', status: 'laufend', fortschritt: 80 },
+    { id: 3, name: 'EDV Grundlagen', teilnehmer: 6, startDatum: '01.11.2025', status: 'laufend', fortschritt: 30 },
+    { id: 4, name: 'Bewerbungstraining', teilnehmer: 10, startDatum: '20.10.2025', status: 'laufend', fortschritt: 45 },
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Link href="/"><h1 className="text-2xl font-bold text-gray-900 cursor-pointer">SRH Mutter-Kind Verwaltung</h1></Link>
-            <div className="flex space-x-4">
-              <Link href="/foerdergelder" className="text-gray-600 hover:text-gray-900">Fördergelder</Link>
-              <Link href="/bildungswerk" className="text-blue-600 font-medium">Bildungswerk</Link>
-              <Link href="/bewohner" className="text-gray-600 hover:text-gray-900">Bewohner</Link>
-              <Link href="/jugendamt" className="text-gray-600 hover:text-gray-900">Jugendamt</Link>
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-blue-600 text-white shadow-lg">
+        <div className="container mx-auto px-4 py-6">
+          <Link href="/" className="inline-flex items-center text-blue-100 hover:text-white mb-2">
+            <ArrowLeft size={20} className="mr-1" /> Zurück zum Dashboard
+          </Link>
+          <h1 className="text-3xl font-bold">Bildungswerk-Verwaltung</h1>
+          <p className="text-blue-100 mt-1">SRH Berufsbildungswerk Neckargemünd</p>
+        </div>
+      </header>
+
+      <main className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm">Aktive Kurse</p>
+                <p className="text-3xl font-bold text-blue-600">{kurse.length}</p>
+              </div>
+              <GraduationCap size={40} className="text-blue-600" />
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm">Teilnehmer Gesamt</p>
+                <p className="text-3xl font-bold text-green-600">36</p>
+              </div>
+              <Users size={40} className="text-green-600" />
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-600 text-sm">Abschlüsse 2025</p>
+                <p className="text-3xl font-bold text-purple-600">14</p>
+              </div>
+              <Award size={40} className="text-purple-600" />
             </div>
           </div>
         </div>
-      </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Bildungswerk & Kurse</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow p-6">
-            <GraduationCap className="w-8 h-8 text-blue-600 mb-2" />
-            <p className="text-sm text-gray-600">Aktive Kurse</p>
-            <p className="text-2xl font-bold text-gray-900">{kurse.length}</p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <Users className="w-8 h-8 text-green-600 mb-2" />
-            <p className="text-sm text-gray-600">Teilnehmer gesamt</p>
-            <p className="text-2xl font-bold text-gray-900">21</p>
-          </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <Calendar className="w-8 h-8 text-purple-600 mb-2" />
-            <p className="text-sm text-gray-600">Abschlüsse 2024</p>
-            <p className="text-2xl font-bold text-gray-900">5</p>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Kurs</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Teilnehmer</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Start</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ende</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {kurse.map((kurs, i) => (
-                <tr key={i} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">{kurs.name}</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">{kurs.teilnehmer}</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">{kurs.start}</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">{kurs.ende}</td>
-                  <td className="px-6 py-4">
-                    <span className="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
-                      {kurs.status}
+        <div className="space-y-6">
+          {kurse.map((kurs) => (
+            <div key={kurs.id} className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800">{kurs.name}</h3>
+                  <div className="flex items-center mt-2 space-x-4 text-sm text-gray-600">
+                    <span className="flex items-center">
+                      <Users size={16} className="mr-1" /> {kurs.teilnehmer} Teilnehmer
                     </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    <span className="flex items-center">
+                      <Calendar size={16} className="mr-1" /> Start: {kurs.startDatum}
+                    </span>
+                  </div>
+                </div>
+                <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                  {kurs.status}
+                </span>
+              </div>
+
+              <div className="mb-2">
+                <div className="flex justify-between text-sm text-gray-600 mb-1">
+                  <span>Kursfortschritt</span>
+                  <span className="font-semibold">{kurs.fortschritt}%</span>
+                </div>
+                <div className="bg-gray-200 rounded-full h-3">
+                  <div 
+                    className="bg-blue-600 h-3 rounded-full transition-all duration-300" 
+                    style={{width: `${kurs.fortschritt}%`}}
+                  ></div>
+                </div>
+              </div>
+
+              <div className="mt-4 flex space-x-2">
+                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                  Details ansehen
+                </button>
+                <button className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
+                  Teilnehmer verwalten
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
