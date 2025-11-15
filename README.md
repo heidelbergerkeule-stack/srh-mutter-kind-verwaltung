@@ -1,50 +1,66 @@
-# SRH Mutter-Kind Verwaltungssoftware
+# SRH Mutter-Kind Verwaltung
 
-Verwaltungssoftware für die SRH Mutter-Kind-Gruppe Neckargemünd mit Fokus auf **Bildungswerke** und **Fördergelder**.
+Verwaltungssoftware für die Mutter-Kind-Gruppe der SRH Neckargemünd mit Fokus auf **Bildungswerke** und **Fördergelder**.
 
 ## Features
 
-### 🎓 Bildungswerk-Verwaltung
-- Kurse und Weiterbildungen für Mütter/Väter
-- Teilnehmerverwaltung und Anwesenheit
-- Bildungsfortschritte dokumentieren
-- Zertifikate und Abschlüsse
+### 🎯 Hauptfunktionen
 
-### 💰 Fördergelder-Management (Hauptfokus)
-- BAföG, Bildungsgutscheine, ESF-Mittel
-- § 19 SGB VIII Förderung
-- Antragsverwaltung mit Status-Tracking
-- Fristen-Management mit Alarmen
-- Verwendungsnachweise generieren
-- Budget-Tracking
+1. **Fördergelder Management** (Kernfunktion)
+   - Übersicht aller Förderprogramme (BAföG, ESF, Bildungsgutscheine, § 19 SGB VIII)
+   - Antragsverwaltung mit Status-Tracking
+   - Fristen-Management mit automatischen Erinnerungen
+   - Budget-Tracking pro Teilnehmer
+   - Verwendungsnachweise
 
-### 👪 Bewohner-Verwaltung
-- Mütter/Väter + Kinder verwalten
-- Dokumenten-Management
-- Zimmerverwaltung
+2. **Bildungswerk-Verwaltung**
+   - Kurs-Management (Schulabschluss, Ausbildung, Qualifizierung)
+   - Teilnehmerverwaltung
+   - Bildungspläne und Fortschrittsdokumentation
+   - Zertifikate-Management
 
-### 🏛️ Jugendamt & Behörden
-- Falldokumentation nach § 19 SGB VIII
-- Berichterstellung
-- Kommunikations-Tracking
+3. **Bewohner-Verwaltung**
+   - Mutter/Vater + Kind(er) Profile
+   - Aufnahme-/Auszugsdaten
+   - Dokumenten-Management
+
+4. **Jugendamt & Behörden**
+   - § 19 SGB VIII Dokumentation
+   - Hilfeplanverfahren-Tracking
+   - Automatische Berichtserstellung
+   - Fristen-Kalender
 
 ## Tech Stack
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- Zustand (State Management)
-- Lucide Icons
+- **Next.js 14** mit App Router
+- **TypeScript** für Type Safety
+- **Tailwind CSS** für modernes UI
+- **Lucide React** für Icons
+- Responsive Design
+- DSGVO-konform ready
 
 ## Installation
 
-```bash
+\`\`\`bash
 npm install
 npm run dev
-```
+\`\`\`
 
-Öffnen Sie [http://localhost:3000](http://localhost:3000)
+Die Anwendung läuft auf [http://localhost:3000](http://localhost:3000)
+
+## Deployment
+
+Optimiert für Vercel-Deployment:
+
+\`\`\`bash
+npm run build
+\`\`\`
 
 ## Entwickelt für
 
-SRH Berufsbildungswerk Neckargemünd - Jugendhilfe educare
+**SRH Berufsbildungswerk Neckargemünd**  
+Jugendhilfe educare - Mutter-Vater-Kind-Gruppe
+
+---
+
+© 2024 SRH Mutter-Kind Verwaltung
