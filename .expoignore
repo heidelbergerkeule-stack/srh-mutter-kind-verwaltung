@@ -1,0 +1,12 @@
+# Ignore files for Expo publish/build
+node_modules
+.git
+.gitignore
+android
+ios
+.web-build
+/dist
+/build
+.env
+.vscode
+.idea

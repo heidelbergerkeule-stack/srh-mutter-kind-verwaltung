@@ -4,29 +4,31 @@
     "slug": "srh-mutter-kind-verwaltung",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+    "sdkVersion": "49.0.0",
+    "platforms": ["ios", "android", "web"],
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.srh.mutterkindverwaltung"
+      "bundleIdentifier": "de.heidelbergerkeule.srh_mkv"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.srh.mutterkindverwaltung"
+      "package": "de.heidelbergerkeule.srh_mkv"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
     }
   }
 }
